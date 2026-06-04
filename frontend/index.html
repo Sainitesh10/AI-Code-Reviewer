@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Code Review Assistant</title>
+    
+    <!-- Marked.js for markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    
+    <!-- Highlight.js for syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/tokyo-night-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-wrapper">
+        <div class="glass-container">
+            <header>
+                <h1>2. AI Code Review Assistant</h1>
+                <p>Paste code... and let the LLM:</p>
+                <ul class="features">
+                    <li>review bugs</li>
+                    <li>explain logic</li>
+                    <li>suggest optimizations</li>
+                </ul>
+            </header>
+
+            <main>
+                <div class="input-section">
+                    <select id="language-select">
+                        <option value="Python">Python</option>
+                        <option value="JavaScript">JavaScript</option>
+                        <option value="TypeScript">TypeScript</option>
+                        <option value="Java">Java</option>
+                        <option value="C++">C++</option>
+                        <option value="Go">Go</option>
+                        <option value="Rust">Rust</option>
+                    </select>
+                    
+                    <textarea id="code-input" placeholder="Paste your code here..." spellcheck="false"></textarea>
+                    
+                    <button id="review-btn">
+                        <span class="btn-text">Analyze Code</span>
+                        <div class="loader hidden" id="btn-loader"></div>
+                    </button>
+                </div>
+
+                <div id="results-section" class="hidden">
+                    <div class="results-header">
+                        <h2>Analysis Results</h2>
+                        <button id="reset-btn" class="secondary-btn">New Review</button>
+                    </div>
+                    <div id="markdown-output"></div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
