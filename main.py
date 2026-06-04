@@ -49,18 +49,5 @@ async def process_review(request: ReviewRequest):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-# Mount frontend static files
-# We mount the directory for assets but serve index.html directly on root
-app.mount("/static", StaticFiles(directory="frontend"), name="static")
-
-@app.get("/")
-async def root():
-    return FileResponse("frontend/index.html")
-
-@app.get("/{filename}")
-async def serve_file(filename: str):
-    # Extremely basic static file serving for root level files like style.css/script.js
-    file_path = os.path.join("frontend", filename)
-    if os.path.exists(file_path):
-        return FileResponse(file_path)
-    raise HTTPException(status_code=404, detail="File not found")
+# Serve the entire frontend directory as static files (handles index.html automatically)
+app.mount("/", StaticFiles(directory="frontend", html=True), name="frontend")
