@@ -2,11 +2,10 @@
 
 A blazingly fast, highly responsive web application that leverages Google's Gemini 2.5 AI model to automatically review, debug, and optimize source code. Built with a lightweight Python backend and a stunning Glassmorphism UI.
 
-**[🔴 Live Demo (Coming Soon)](#)**
+**[🚀 Live Demo](https://ai-code-reviewer-ii9o.onrender.com)**
 
 <div align="center">
-  <!-- TODO: Add a screenshot of your beautiful Glassmorphism UI here -->
-  <img src="https://via.placeholder.com/800x450.png?text=Glassmorphism+UI+Screenshot" alt="AI Code Review Assistant" width="100%">
+  <img src="screenshot.png" alt="AI Code Review Assistant" width="100%">
 </div>
 ## ✨ Key Features
 - **Intelligent Bug Detection:** Instantly identifies syntax errors, logical bugs, and edge cases in your code.
